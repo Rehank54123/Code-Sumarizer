@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Models and Tokenizers
+models/model.pt
+models/*.pkl
+*.pt
+*.pkl
+
+# Data
+data/train/*.jsonl
+data/valid/*.jsonl
+data/test/*.jsonl
+data/*.jsonl
+
+# OS generated files
+.DS_Store
+Thumbs.db
