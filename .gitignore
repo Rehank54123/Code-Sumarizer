@@ -14,6 +14,7 @@ data/train/*.jsonl
 data/valid/*.jsonl
 data/test/*.jsonl
 data/*.jsonl
+!data.zip
 
 # OS generated files
 .DS_Store
