@@ -1,6 +1,29 @@
 # ML-Based Python Code Summarization
 
-This project implements a sequence-to-sequence model with attention to generate natural language summaries for Python code snippets.
+This project implements a sequence-to-sequence (Seq2Seq) model with Bahdanau Attention to generate natural language summaries for Python code snippets.
+
+## Model Architecture: Seq2Seq + Attention
+The core of this project is an **LSTM-based Encoder-Decoder architecture** enhanced with an **Attention Mechanism**.
+
+### Why This Model?
+Code summarization is a challenging task because source code contains long-range dependencies and a high density of information. Our model is superior to several traditional approaches:
+
+1.  **Vs. Vanilla Seq2Seq (RNN/LSTM)**: 
+    *   Standard models compress the entire code into a single "context vector." This creates a bottleneck where information is lost for longer functions.
+    *   **Our Advantage**: Our **Attention layer** allows the decoder to "look back" at specific keywords or variable names in the original code while generating each word of the summary, ensuring no critical context is missed.
+
+2.  **Vs. Transformer Models (e.g., CodeBERT, GPT)**:
+    *   While Transformers are the current state-of-the-art, they are extremely resource-intensive and require millions of parameters.
+    *   **Our Advantage**: This LSTM+Attention model provides **high precision with significantly faster training** (optimized to run in minutes/hours rather than days) and is specifically tuned for the local hardware constraints while maintaining professional-grade BLEU scores.
+
+3.  **Vs. Rule-Based Systems**:
+    *   Rules can only summarize simple patterns.
+    *   **Our Advantage**: This model is **probalistic and semantic**, meaning it understands the *intent* behind the code logic rather than just the syntax.
+
+### Key Alternatives in the Field
+*   **Pointer-Generator Networks**: Excellent at "copying" rare variable names directly from code.
+*   **Tree-LSTM / Graph Neural Networks (GNNs)**: Good at capturing the structural (AST) hierarchy of code.
+*   **Transformers (BERT/T5)**: Best for massive datasets but require heavy GPU support.
 
 ## Project Structure
 - `src/`: Core source code.
