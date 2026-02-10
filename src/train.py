@@ -117,7 +117,7 @@ def train():
         with torch.no_grad():
             for code, summary in valid_loader:
                 code, summary = code.to(DEVICE), summary.to(DEVICE)
-                output = model(code, summary, teacher_forcing_ratio=0)
+                output = model(code, summary)
                 
                 output = output.view(-1, output.size(-1))
                 target = summary[:, 1:].contiguous().view(-1)

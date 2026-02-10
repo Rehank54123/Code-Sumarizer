@@ -4,10 +4,10 @@ __pycache__/
 *$py.class
 
 # Models and Tokenizers
-models/model.pt
-models/*.pkl
-*.pt
-*.pkl
+#models/model.pt
+#models/*.pkl
+#*.pt
+#*.pkl
 
 # Data
 data/train/*.jsonl
