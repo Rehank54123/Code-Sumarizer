@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import tkinter as tk
 from tkinter import ttk
-from summarize import summarize
+from src.summarize import summarize
 
 root = tk.Tk()
 root.title("Python Code Summarizer")
